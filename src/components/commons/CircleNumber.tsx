@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 
-const CircleNumber = () => {
-  return <S.Circle>5</S.Circle>
+interface CircleNumberProps {
+  count: number
+}
+
+const CircleNumber = ({ count }: CircleNumberProps) => {
+  return <S.Circle>{count}</S.Circle>
 }
 
 export default CircleNumber
