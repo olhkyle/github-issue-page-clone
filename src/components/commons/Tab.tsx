@@ -22,7 +22,7 @@ const Tab = ({ title, number, selected, onClick }: TabProps) => {
 export default Tab
 
 const Wrapper = styled.li<{ selected: boolean }>`
-  width: 150px;
+  min-width: 150px;
   ${({ selected }) => selected && 'border-bottom: 2px solid #fa4548'}
 `
 

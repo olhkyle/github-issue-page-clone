@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import React, { useState } from 'react'
 import Button from './commons/Button'
+import ListItem from './commons/ListItem'
+import ListItemLayout from './commons/ListItemLayout'
 import { ButtonProps } from './Header'
 
 const Section = () => {
@@ -21,6 +23,19 @@ const Section = () => {
         <Input value={inputValue} type="text" onChange={handleInputChange} />
         <Button issueBtn={issueBtn}>New Issue</Button>
       </Wrapper>
+      <ListItemLayout checked={true} onChangeCheckbox={() => {}}>
+        <FilterList>
+          <span>Author</span>
+          <span>Label</span>
+          <span>Projects</span>
+          <span>MileStones</span>
+          <span>Assignee</span>
+          <span>Sort</span>
+        </FilterList>
+      </ListItemLayout>
+      <Body>
+        <ListItem onClickTitle={() => {}} />
+      </Body>
     </ListContainer>
   )
 }
@@ -36,6 +51,7 @@ const ListContainer = styled.div`
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 `
 
 const Input = styled.input`
@@ -47,3 +63,17 @@ const Input = styled.input`
   color: #57606a;
   background: #f6f8fa;
 `
+
+const Body = styled.div``
+
+const FilterList = styled.div`
+  display: flex;
+  align-items: center;
+
+  span {
+    padding: 0 1rem;
+    line-height: 24px;
+  }
+`
+
+const CommonLayout = styled(ListItemLayout)``
